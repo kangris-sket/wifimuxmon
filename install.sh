@@ -1,20 +1,20 @@
 
-#!/system/bin/sh
+#!/data/data/com.termux/files/usr/bin/bash
 echo Installing Driver...
-mkdir -p /data/wmon/
-cp -f pack/driver/* /data/wmon/
+mkdir -p /wifimuxmon/
+cp -f pack/driver/* /wifimuxmon/
 echo OK
 echo Installing Utils...
-mkdir -p /data/local/bin/
-cp -f ./pack/utils/* /data/local/bin/
+mkdir -p /data/data/com.termux/files/usr/bin/
+cp -f ./pack/utils/* /data/data/com.termux/files/usr/bin/
 echo OK
 echo Creating Symlink...
-ln  '/data/local/bin/iwmulticall' '/data/local/bin/iwpriv'
-ln  '/data/local/bin/iwmulticall' '/data/local/bin/iwconfig'
+ln  '$PREFIX/bin/iwmulticall' '$PREFIX/bin/iwpriv'
+ln  '$PREFIX/bin/iwmulticall' '$PREFIX/bin/iwconfig'
 echo OK
 echo Fixing Permissions...
-chmod 711 /data/wmon/*
-chmod 711 /data/local/bin/*
+chmod +x wifimuxmon/*
+chmod +x $PREFIX/bin/*
 echo OK
 echo Temporary Files Cleaning...
 rm -rf pack

@@ -1,2 +1,2 @@
-# wmon
-Wifi Mon on Termux Project
+# wifimuxmon
+Wifi Monitor on Termux Project
